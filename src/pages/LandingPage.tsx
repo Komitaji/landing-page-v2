@@ -1,5 +1,8 @@
 import React from 'react';
 import logo from '../images/landing_page/zesty-logo-with-text.svg';
+import illustration1 from '../images/landing_page/illustration-1.svg';
+import illustration2 from '../images/landing_page/illustration-2.svg';
+import illustration3 from '../images/landing_page/illustration-3.svg';
 import Button from '../components/Button';
 import '../styles/landing_page.scss';
 
@@ -26,6 +29,44 @@ export default function LandingPage() {
           <div>
             <Button style={{ height: '60px', marginRight: '20px' }}>Launch App</Button>
             <Button secondary={true} style={{ height: '60px' }}>Learn more</Button>
+          </div>
+        </div>
+      </div>
+      <div className='second-part'>
+        <div className='left-illustration'>
+          <img src={illustration1} alt='Agencies and Individuals' />
+          <div>
+            <h1>Agencies and Individuals</h1>
+            <label>
+              Agencies and individuals can create and deploy data-rich multiversal compaigns across virtual worlds both on and off-chain
+            </label>
+            <p>
+              Reach an audience of over 500,000 visitors in the metaverse each month. Advertisers see an average click-through rate of 12%. Measure ad performance with real time data.
+            </p>
+          </div>
+        </div>
+        <div className='right-illustration'>
+          <div>
+            <h1>Virtual Property Owners</h1>
+            <label>
+              Virtual Property Owners can further monetize and increase the value of their properties by renting out ad spaces
+            </label>
+            <p>
+              Generate revenue from billboard space rental. Control how and where billboards are displayed. Leverage ad visibility and revenue data to demonstrate property value.
+            </p>
+          </div>
+          <img src={illustration2} alt='Virtual Property Owners' />
+        </div>
+        <div className='left-illustration'>
+          <img src={illustration3} alt='Virtual World and Space Creators' />
+          <div>
+            <h1>Virtual World and Space Creators</h1>
+            <label>
+              Virtual World and Space Creators can create a seamless and non-intrusive advertising experience for their users while increasing total world value
+            </label>
+            <p>
+              On-chain revenue stats ensure transparency and reduce ad fraud. Our open-source SDK is easy to integrate with most worlds and spaces. Dashboards to manage multiple spaces at once.
+            </p>
           </div>
         </div>
       </div>
