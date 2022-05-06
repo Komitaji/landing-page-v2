@@ -1,0 +1,17 @@
+div.root {
+  background: #211D35;
+  > div {
+    padding: 0 18.33%;
+  }
+  .first-part {
+    height: 100vh;
+    background: url(../images/landing_page/background-1.svg);
+    nav {
+      &, & > div {
+        display: flex;
+        align-items: center;
+      }
+      justify-content: space-between;
+    }
+  } 
+}
