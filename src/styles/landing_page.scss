@@ -1,17 +1,56 @@
 div.root {
   background: #211D35;
   > div {
-    padding: 0 18.33%;
+    padding: 0 10%;
   }
   .first-part {
     height: 100vh;
     background: url(../images/landing_page/background-1.svg);
     nav {
+      padding-top: 30px;
       &, & > div {
         display: flex;
         align-items: center;
       }
       justify-content: space-between;
+      .left-nav {
+        img {
+          margin-right: 75px;
+        }
+        a {
+          font-size: 18px;
+          font-weight: 500;
+          color: rgb(255, 255, 255, 0.8);
+          text-decoration: none;
+          & + a {
+            margin-left: 40px;
+          }
+        }
+      }
+      .right-nav {
+        button {
+          margin-right: 15px;
+        }
+      }
+      & + div {
+        margin-top: 100px;
+        > h1 {
+          letter-spacing: -0.02em;
+          color: var(--white);
+          font-weight: 700;
+          width: 530px;
+          font-size: 60px;
+        }
+        > p {
+          font-size: 18px;
+          font-weight: 400;
+          color: var(--white);
+          opacity: 0.6;
+          width: 550px;
+          line-height: 24px;
+          padding-bottom: 70px;
+        }
+      }
     }
-  } 
+  }
 }

@@ -2,6 +2,7 @@ button {
   padding: 10px 30px;
   border-radius: 4px;
   font-size: 14px;
+  cursor: pointer;
   &.primary {
     background: var(--orange-gradient);
     border: 1px solid transparent;
