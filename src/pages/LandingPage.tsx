@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../../images/landing_page/zesty-logo-with-text.svg';
-import Button from '../../components/button/Button';
-import '../../styles/landing_page.scss';
+import logo from '../images/landing_page/zesty-logo-with-text.svg';
+import Button from '../components/Button';
+import '../styles/landing_page.scss';
 
 export default function LandingPage() {
   return (

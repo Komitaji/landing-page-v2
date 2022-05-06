@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/button.scss';
+import '../styles/button.scss';
 
 export default function Button({ secondary, children }: { secondary?: boolean, children: string }) {
   if (secondary) {
