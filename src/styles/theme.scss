@@ -1,0 +1,11 @@
+:root, body[data-theme='light'] {
+  --orange-gradient: linear-gradient(112.17deg, #EE6E25 0%, #E95A25 100%);
+  --white: #fff;
+  --grey: #e5e5e5;
+}
+
+body[data-theme='dark'] {
+  --orange-gradient: linear-gradient(112.17deg, #EE6E25 0%, #E95A25 100%);
+  --white: #fff;
+  --grey: #e5e5e5;
+}
