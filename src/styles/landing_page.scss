@@ -142,3 +142,9 @@ div.root {
     }
   }
 }
+
+@media (max-width: 1366px) {
+  div.root > div {
+    padding: 0 50px;
+  }
+}
