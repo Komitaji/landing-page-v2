@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../images/landing_page/zesty-logo-with-text.svg';
+import monoLogo from '../images/landing_page/zesty-logo-with-text-mono.svg';
 import illustration1 from '../images/landing_page/illustration-1.svg';
 import illustration2 from '../images/landing_page/illustration-2.svg';
 import illustration3 from '../images/landing_page/illustration-3.svg';
@@ -71,6 +72,33 @@ export default function LandingPage() {
         </div>
         <div style={{ justifyContent: 'center' }}>
           <Button style={{ width: '320px', height: '80px', marginBottom: '100px', position: 'relative', top: '200px'}}>Launch App</Button>
+        </div>
+      </div>
+      <div className="third-part">
+        <div className='copyrights'>
+          <img src={monoLogo} alt="Zesty Logo" />
+          <span>Copyright { new Date().getFullYear() }. All rights reserved.</span>
+        </div>
+        <div className="links">
+          <div>
+            <label>Docs</label>
+            <a href="/">Whitepaper</a>
+            <a href="/">Doc 2</a>
+            <a href="/">Doc 3</a>
+          </div>
+          <div>
+            <label>About</label>
+            <a href="/">About</a>
+            <a href="/">Help</a>
+            <a href="/">Privacy Policy</a>
+            <a href="/">Terms of Service</a>
+          </div>
+          <div>
+            <label>Social</label>
+            <a href="/">Twitter</a>
+            <a href="/">Telegram</a>
+            <a href="/">Discord</a>
+          </div>
         </div>
       </div>
     </div>

@@ -30,12 +30,12 @@ div.root {
         }
       }
       .right-nav {
-        button {
+        button.secondary {
           margin-right: 15px;
         }
       }
       & + div {
-        margin-top: 100px;
+        margin-top: 150px;
         > h1 {
           letter-spacing: -0.02em;
           color: var(--white);
@@ -90,6 +90,53 @@ div.root {
               line-height: 20px;
             }
           }
+        }
+      }
+    }
+  }
+  .third-part {
+    height: 370px;
+    background: #181522;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    align-items: flex-start;
+    > div.copyrights {
+      display: flex;
+      align-items: center;
+      span {
+        color: #837C99;
+        opacity: 0.5;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0.02em;
+        margin-left: 25px;
+      }
+    }
+    > div.links {
+      display: flex;
+      justify-content: space-between;
+      > div {
+        margin-right: 60px;
+        label {
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 15px;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          color: #E5E5E5;
+          display: inline-block;
+          margin-bottom: 12px;
+        }
+        a {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 17px;
+          text-decoration: none;
+          display: block;
+          letter-spacing: 0.02em;
+          color: #837C99;
+          margin-bottom: 8px;
         }
       }
     }
