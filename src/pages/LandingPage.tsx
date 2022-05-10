@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../components/Button';
 import styles from '../styles/landing_page.module.scss';
 import Image from 'next/image';
 
 export default function LandingPage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className={styles.root}>
       <div className={styles.firstPart}>
         <nav>
-          <div className={styles.leftNav}>
-            <Image src="/images/landing_page/zesty-logo-with-text.svg" alt='logo' height="40px" width="100%" />
+          <div className={styles.leftNav + (isMenuOpen ? ` ${styles.visible}` : '')}>
+            <div className={styles.leftNavImages}>
+              <Image src="/images/landing_page/zesty-logo-with-text.svg" alt='logo' height="40px" width="100%" />
+              <Image src="/images/landing_page/menu.svg" alt="menu" height="11px" width="24px" className={styles.menu} onClick={() => setIsMenuOpen(!isMenuOpen)} />
+            </div>
             <a href='/' style={{ marginLeft: '75px' }}>Marketplace</a>
             <a href='/'>Dashboard</a>
             <a href='/'>Governance</a>
@@ -67,7 +71,7 @@ export default function LandingPage() {
       </div>
       <div className={styles.thirdPart}>
         <div className={styles.copyrights}>
-          <Image src="/images/landing_page/zesty-logo-with-text-mono.svg" alt="Zesty Logo" height="100%" width="100%" />
+          <Image src="/images/landing_page/zesty-logo-with-text-mono.svg" alt="Zesty Logo" height="30px" width="100%" />
           <span>Copyright { new Date().getFullYear() }. All rights reserved.</span>
         </div>
         <div className={styles.links}>

@@ -5,6 +5,9 @@ div.root {
   .firstPart {
     height: 100vh;
     background-image: url(/images/landing_page/background-1.png);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position:center;
     nav {
       padding-top: 30px;
       &, & > div {
@@ -13,6 +16,15 @@ div.root {
       }
       justify-content: space-between;
       .leftNav {
+        > .leftNavImages {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .menu { 
+          visibility: hidden;
+        }
         a {
           font-size: 18px;
           font-weight: 500;
@@ -136,5 +148,43 @@ div.root {
 @media (max-width: 1366px) {
   div.root > div {
     padding: 0 50px;
+  }
+}
+
+@media(max-width: 700px) {
+  div.root {
+    .leftNav {
+      width: 100%;
+      &.visible {
+        display: flex;
+      }
+      .menu {
+        visibility: visible !important;
+        position: relative;
+        right: 0;
+      }
+      a {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        display: none;
+        border-radius: 6px;
+        border: 1px solid var(--white);
+        margin: 0 0 10px 0 !important;
+        &:first-of-type {
+          margin-top: 40px !important;
+        }
+        &:last-of-type {
+          margin-bottom: -100px !important;
+        }
+      }
+      &.visible {
+        flex: 1;
+        flex-direction: column;
+        a {
+          display: block;
+        }
+      }
+    }
   }
 }
