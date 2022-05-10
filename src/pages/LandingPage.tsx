@@ -1,27 +1,18 @@
 import React from 'react';
-import logo from '../images/landing_page/zesty-logo-with-text.svg';
-import monoLogo from '../images/landing_page/zesty-logo-with-text-mono.svg';
-import illustration1 from '../images/landing_page/illustration-1.svg';
-import illustration2 from '../images/landing_page/illustration-2.svg';
-import illustration3 from '../images/landing_page/illustration-3.svg';
 import Button from '../components/Button';
-import '../styles/landing_page.scss';
+import styles from '../styles/landing_page.module.scss';
+import Image from 'next/image';
 
 export default function LandingPage() {
   return (
-    <div className='root'>
-      <div className='first-part'>
+    <div className={styles.root}>
+      <div className={styles.firstPart}>
         <nav>
-          <div className='left-nav'>
-            <img src={logo} alt='logo' />
-            <a href='/'>Marketplace</a>
+          <div className={styles.leftNav}>
+            <Image src="/images/landing_page/zesty-logo-with-text.svg" alt='logo' height="40px" width="100%" />
+            <a href='/' style={{ marginLeft: '75px' }}>Marketplace</a>
             <a href='/'>Dashboard</a>
             <a href='/'>Governance</a>
-          </div>
-          <div className='right-nav'>
-            <Button secondary={true}>Buy USDC</Button>
-            <Button secondary={true}>Network</Button>
-            <Button>Connect Wallet</Button>
           </div>
         </nav>
         <div>
@@ -33,9 +24,9 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
-      <div className='second-part'>
+      <div className={styles.secondPart}>
         <div>
-          <img src={illustration1} alt='Agencies and Individuals' />
+          <Image src="/images/landing_page/illustration-1.svg" alt='Agencies and Individuals' height="500px" width="500px" />
           <div>
             <h1>Agencies and Individuals</h1>
             <label>
@@ -56,10 +47,10 @@ export default function LandingPage() {
               Generate revenue from billboard space rental. Control how and where billboards are displayed. Leverage ad visibility and revenue data to demonstrate property value.
             </p>
           </div>
-          <img src={illustration2} alt='Virtual Property Owners' />
+          <Image src="/images/landing_page/illustration-2.svg" alt='Virtual Property Owners' height="500px" width="500px" />
         </div>
         <div>
-          <img src={illustration3} alt='Virtual World and Space Creators' />
+          <Image src="/images/landing_page/illustration-3.svg" alt='Virtual World and Space Creators' height="500px" width="500px" />
           <div>
             <h1>Virtual World and Space Creators</h1>
             <label>
@@ -74,12 +65,12 @@ export default function LandingPage() {
           <Button style={{ width: '320px', height: '80px', marginBottom: '100px', position: 'relative', top: '200px'}}>Launch App</Button>
         </div>
       </div>
-      <div className="third-part">
-        <div className='copyrights'>
-          <img src={monoLogo} alt="Zesty Logo" />
+      <div className={styles.thirdPart}>
+        <div className={styles.copyrights}>
+          <Image src="/images/landing_page/zesty-logo-with-text-mono.svg" alt="Zesty Logo" height="100%" width="100%" />
           <span>Copyright { new Date().getFullYear() }. All rights reserved.</span>
         </div>
-        <div className="links">
+        <div className={styles.links}>
           <div>
             <label>Docs</label>
             <a href="/">Whitepaper</a>
