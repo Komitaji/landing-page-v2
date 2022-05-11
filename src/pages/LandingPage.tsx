@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../components/Button';
 import styles from '../styles/landing_page.module.scss';
 import Image from 'next/image';
 
 export default function LandingPage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className={styles.root}>
       <div className={styles.firstPart}>
         <nav>
-          <div className={styles.leftNav}>
-            <Image src="/images/landing_page/zesty-logo-with-text.svg" alt='logo' height="40px" width="100%" />
+          <div className={styles.leftNav + (isMenuOpen ? ` ${styles.visible}` : '')}>
+            <div className={styles.leftNavImages}>
+              <Image src="/images/landing_page/zesty-logo-with-text.svg" alt='logo' height="40px" width="100%" />
+              <Image src="/images/landing_page/menu.svg" alt="menu" height="11px" width="24px" className={styles.menu} onClick={() => setIsMenuOpen(!isMenuOpen)} />
+            </div>
             <a href='/' style={{ marginLeft: '75px' }}>Marketplace</a>
             <a href='/'>Dashboard</a>
             <a href='/'>Governance</a>
@@ -37,7 +41,8 @@ export default function LandingPage() {
             </p>
           </div>
         </div>
-        <div>
+        <div className={styles.secondIllustration}>
+          <Image src="/images/landing_page/illustration-2.svg" className={styles.showOnMobile} alt='Virtual Property Owners' height="500px" width="500px" />
           <div>
             <h1>Virtual Property Owners</h1>
             <label>
@@ -47,7 +52,7 @@ export default function LandingPage() {
               Generate revenue from billboard space rental. Control how and where billboards are displayed. Leverage ad visibility and revenue data to demonstrate property value.
             </p>
           </div>
-          <Image src="/images/landing_page/illustration-2.svg" alt='Virtual Property Owners' height="500px" width="500px" />
+          <div className={styles.hideOnMobile}><Image src="/images/landing_page/illustration-2.svg" alt='Virtual Property Owners' height="500px" width="500px" /></div>
         </div>
         <div>
           <Image src="/images/landing_page/illustration-3.svg" alt='Virtual World and Space Creators' height="500px" width="500px" />
@@ -61,15 +66,16 @@ export default function LandingPage() {
             </p>
           </div>
         </div>
-        <div style={{ justifyContent: 'center' }}>
-          <Button style={{ width: '320px', height: '80px', marginBottom: '100px', position: 'relative', top: '200px'}}>Launch App</Button>
+        <div className={styles.secondPartActionButton}>
+          <Button>Launch App</Button>
         </div>
       </div>
       <div className={styles.thirdPart}>
-        <div className={styles.copyrights}>
-          <Image src="/images/landing_page/zesty-logo-with-text-mono.svg" alt="Zesty Logo" height="100%" width="100%" />
+        <div className={styles.copyrights + ' ' + styles.hideOnMobile}>
+          <Image src="/images/landing_page/zesty-logo-with-text-mono.svg" alt="Zesty Logo" height="30px" width="100%" />
           <span>Copyright { new Date().getFullYear() }. All rights reserved.</span>
         </div>
+        <Image src="/images/landing_page/zesty-logo-with-text-mono.svg" className={styles.showOnMobile} alt="Zesty Logo" height="30px" width="100%" />
         <div className={styles.links}>
           <div>
             <label>Docs</label>
@@ -90,6 +96,9 @@ export default function LandingPage() {
             <a href="/">Telegram</a>
             <a href="/">Discord</a>
           </div>
+        </div>
+        <div className={styles.copyrights + ' ' + styles.showOnMobile}>
+          <span>Copyright {new Date().getFullYear()}. All rights reserved.</span>
         </div>
       </div>
     </div>
