@@ -41,7 +41,8 @@ export default function LandingPage() {
             </p>
           </div>
         </div>
-        <div>
+        <div className={styles.secondIllustration}>
+          <Image src="/images/landing_page/illustration-2.svg" className={styles.showOnMobile} alt='Virtual Property Owners' height="500px" width="500px" />
           <div>
             <h1>Virtual Property Owners</h1>
             <label>
@@ -51,7 +52,7 @@ export default function LandingPage() {
               Generate revenue from billboard space rental. Control how and where billboards are displayed. Leverage ad visibility and revenue data to demonstrate property value.
             </p>
           </div>
-          <Image src="/images/landing_page/illustration-2.svg" alt='Virtual Property Owners' height="500px" width="500px" />
+          <div className={styles.hideOnMobile}><Image src="/images/landing_page/illustration-2.svg" alt='Virtual Property Owners' height="500px" width="500px" /></div>
         </div>
         <div>
           <Image src="/images/landing_page/illustration-3.svg" alt='Virtual World and Space Creators' height="500px" width="500px" />
@@ -65,15 +66,16 @@ export default function LandingPage() {
             </p>
           </div>
         </div>
-        <div style={{ justifyContent: 'center' }}>
-          <Button style={{ width: '320px', height: '80px', marginBottom: '100px', position: 'relative', top: '200px'}}>Launch App</Button>
+        <div className={styles.secondPartActionButton}>
+          <Button>Launch App</Button>
         </div>
       </div>
       <div className={styles.thirdPart}>
-        <div className={styles.copyrights}>
+        <div className={styles.copyrights + ' ' + styles.hideOnMobile}>
           <Image src="/images/landing_page/zesty-logo-with-text-mono.svg" alt="Zesty Logo" height="30px" width="100%" />
           <span>Copyright { new Date().getFullYear() }. All rights reserved.</span>
         </div>
+        <Image src="/images/landing_page/zesty-logo-with-text-mono.svg" className={styles.showOnMobile} alt="Zesty Logo" height="30px" width="100%" />
         <div className={styles.links}>
           <div>
             <label>Docs</label>
@@ -94,6 +96,9 @@ export default function LandingPage() {
             <a href="/">Telegram</a>
             <a href="/">Discord</a>
           </div>
+        </div>
+        <div className={styles.copyrights + ' ' + styles.showOnMobile}>
+          <span>Copyright {new Date().getFullYear()}. All rights reserved.</span>
         </div>
       </div>
     </div>
