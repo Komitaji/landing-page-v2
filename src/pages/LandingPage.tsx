@@ -96,8 +96,6 @@ export default function LandingPage() {
           <div>
             <label>Docs</label>
             <a href={whitepaperUrl} target="_blank" rel="noopener noreferrer">Whitepaper</a>
-            <a href="/" target="_blank" rel="noopener noreferrer">Doc 2</a>
-            <a href="/" target="_blank" rel="noopener noreferrer">Doc 3</a>
           </div>
           <div>
             <label>About</label>
@@ -109,7 +107,6 @@ export default function LandingPage() {
           <div>
             <label>Social</label>
             <a href="https://twitter.com/zestymarket" target="_blank" rel="noopener noreferrer">Twitter</a>
-            <a href="/" target="_blank" rel="noopener noreferrer">Telegram</a>
             <a href="https://discord.gg/4Jc3XhM5mp" target="_blank" rel="noopener noreferrer">Discord</a>
           </div>
         </div>
