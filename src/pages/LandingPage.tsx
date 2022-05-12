@@ -5,26 +5,42 @@ import Image from 'next/image';
 
 export default function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const marketplaceUrl = 'https://app.zesty.market/';
+  const documentsUrl = 'https://docs.zesty.market/';
+  const whitepaperUrl = 'https://docs.zesty.market/about/litepaper';
+  function openUrl(url: string) {
+    window.open(url);
+  }
+  function openMenu(e: React.MouseEvent<HTMLImageElement, MouseEvent>) {
+    e.stopPropagation();
+    setIsMenuOpen(true);
+  }
   return (
-    <div className={styles.root}>
+    <div className={styles.root} onClick={() => setIsMenuOpen(false)}>
       <div className={styles.firstPart}>
         <nav>
           <div className={styles.leftNav + (isMenuOpen ? ` ${styles.visible}` : '')}>
             <div className={styles.leftNavImages}>
               <Image src="/images/landing_page/zesty-logo-with-text.svg" alt='logo' height="40px" width="100%" />
-              <Image src="/images/landing_page/menu.svg" alt="menu" height="11px" width="24px" className={styles.menu} onClick={() => setIsMenuOpen(!isMenuOpen)} />
+              <div onClick={openMenu} style={{ padding: '10px', cursor: 'pointer', marginRight: '-10px' }}>
+                <Image src="/images/landing_page/menu.svg" alt="menu" height="11px" width="24px" className={styles.menu}  />
+              </div>
             </div>
-            <a href='/' style={{ marginLeft: '75px' }}>Marketplace</a>
-            <a href='/'>Dashboard</a>
-            <a href='/'>Governance</a>
+            <div className={styles.menuContent}>
+              <a href={marketplaceUrl} style={{ marginLeft: '75px' }} target="_blank" rel="noopener noreferrer">Marketplace</a>
+              <a href='https://blog.zesty.market/' target="_blank" rel="noopener noreferrer">Blog</a>
+              <a href={whitepaperUrl} target="_blank" rel="noopener noreferrer">Litepaper</a>
+              <a href='https://duneanalytics.com/limbofeather/zestymarket' target="_blank" rel="noopener noreferrer">Stats</a>
+              <a href='https://gov.zesty.market/' target="_blank" rel="noopener noreferrer">Governance</a>
+            </div>
           </div>
         </nav>
         <div>
           <h1>Marketplace for rentable billboards in the metaverse</h1>
           <p>Zesty Market is a web3&#8209;enabled and tokenized advertising marketplace for Internet Communities owned by Internet Communities.</p>
           <div>
-            <Button style={{ height: '60px', marginRight: '20px' }}>Launch App</Button>
-            <Button secondary={true} style={{ height: '60px' }}>Learn more</Button>
+            <Button style={{ height: '60px', marginRight: '20px' }} onClick={() => openUrl(marketplaceUrl)}>Launch App</Button>
+            <Button secondary={true} style={{ height: '60px' }} onClick={() => openUrl(documentsUrl)}>Learn more</Button>
           </div>
         </div>
       </div>
@@ -67,7 +83,7 @@ export default function LandingPage() {
           </div>
         </div>
         <div className={styles.secondPartActionButton}>
-          <Button>Launch App</Button>
+          <Button onClick={() => openUrl(marketplaceUrl)}>Launch App</Button>
         </div>
       </div>
       <div className={styles.thirdPart}>
@@ -79,22 +95,22 @@ export default function LandingPage() {
         <div className={styles.links}>
           <div>
             <label>Docs</label>
-            <a href="/">Whitepaper</a>
-            <a href="/">Doc 2</a>
-            <a href="/">Doc 3</a>
+            <a href={whitepaperUrl} target="_blank" rel="noopener noreferrer">Whitepaper</a>
+            <a href="/" target="_blank" rel="noopener noreferrer">Doc 2</a>
+            <a href="/" target="_blank" rel="noopener noreferrer">Doc 3</a>
           </div>
           <div>
             <label>About</label>
-            <a href="/">About</a>
-            <a href="/">Help</a>
-            <a href="/">Privacy Policy</a>
-            <a href="/">Terms of Service</a>
+            <a href="/" target="_blank" rel="noopener noreferrer">About</a>
+            <a href="/" target="_blank" rel="noopener noreferrer">Help</a>
+            <a href="/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+            <a href="/" target="_blank" rel="noopener noreferrer">Terms of Service</a>
           </div>
           <div>
             <label>Social</label>
-            <a href="/">Twitter</a>
-            <a href="/">Telegram</a>
-            <a href="/">Discord</a>
+            <a href="https://twitter.com/zestymarket" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="/" target="_blank" rel="noopener noreferrer">Telegram</a>
+            <a href="https://discord.gg/4Jc3XhM5mp" target="_blank" rel="noopener noreferrer">Discord</a>
           </div>
         </div>
         <div className={styles.copyrights + ' ' + styles.showOnMobile}>

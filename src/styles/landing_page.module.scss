@@ -164,7 +164,7 @@ div.root {
   }
 }
 
-@media(max-width: 700px) {
+@media(max-width: 860px) {
   div.root {
     .hideOnMobile {
       display: none !important;
@@ -183,25 +183,27 @@ div.root {
         right: 0;
       }
       a {
-        width: 100%;
-        text-align: center;
-        padding: 20px;
         display: none;
-        border-radius: 6px;
-        border: 1px solid var(--white);
-        margin: 0 0 10px 0 !important;
-        &:first-of-type {
-          margin-top: 40px !important;
-        }
-        &:last-of-type {
-          margin-bottom: -100px !important;
-        }
       }
       &.visible {
         flex: 1;
         flex-direction: column;
-        a {
-          display: block;
+        .menuContent {
+          width: 200px;
+          background: #211D35;
+          position: fixed;
+          right: 0;
+          height: 100vh;
+          z-index: 1;
+          margin-top: -30px;
+          padding-top: 40px;
+          box-shadow: -5px 0px 100px 1px black;
+          a {
+            display: block;
+            padding-left: 30px;
+            margin-left: 0 !important;
+            margin-bottom: 20px;
+          }
         }
       }
     }
